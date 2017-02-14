@@ -1,0 +1,15 @@
+//Given an arbitrary input string, return the first non-repeating character. For strings with all repeats, return 'sorry'.
+
+function firstNonRepeatedCharacter (string) {
+  for (var i = 0; i < string.length; i++) {
+    var character = string.charAt(i);
+    if (string.indexOf(character) === i && string.indexOf(character, i + 1) === -1) {
+      //if the string contains the character at index i && the string does not contain
+      //the character at any index after the index at which the character was first found
+      //then that will be the first non repeated character in the string
+      return character;
+   }
+  }
+  return 'sorry';
+  //if no non repeating characters are found, return sorry
+}
